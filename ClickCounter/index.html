@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClickCounter</title>
+</head>
+
+<body>
+    <span id="counter-display"></span>
+    <button id="btn-increase">Increase</button>
+    <script src="ClickCounter.js"></script>
+    <script src="ClickCounterView.js"></script>
+
+    <script>
+        (() => {
+            //todo
+            // 생성한 두 개의 모듈과 화면 element를 이용해서 화면 출력
+            const clickCounter = App.ClickCounter();
+            const updateEl = document.querySelector('#counter-display');
+            const triggerEl = document.querySelector('#btn-increase');
+            const view = App.ClickCounterView(clickCounter, {
+                updateEl,
+                triggerEl
+            });
+            // 화면에 출력하기 위해서 updateView() method 호출
+            view.updateView();
+        })()
+    </script>
+</body>
+
+</html>
