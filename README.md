@@ -14,4 +14,13 @@
 
 - **Issue1) Project initial setup**
 
-  → []()
+  → [https://github.com/LeeHyungi0622/TDD-Practice-VanillaJS/issues/1](https://github.com/LeeHyungi0622/TDD-Practice-VanillaJS/issues/1)
+
+  - **Jasmine framework 설치**
+  - standalone으로 설치하는 방법 : 모든 Jasmine 코드를 브라우저에 올려서 실행 (실무에서는 많이 사용되지 않는다)
+
+    - 우선 standalone 방식으로 진행 (다운받은 jasmine-standalone 폴더를 프로젝트의 하위에 복사)
+
+      → [https://jasmine.github.io/pages/getting_started.html](https://jasmine.github.io/pages/getting_started.html)
+
+  - karma 라이브러리와 함께 설치하는 방법 (테스트 자동화)
