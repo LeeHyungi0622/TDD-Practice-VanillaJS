@@ -1,11 +1,21 @@
 var App = App || {};
 
-App.ClickCounterView = (clickCounter, updateEl) => {
+App.ClickCounterView = (clickCounter, options) => {
     if (!clickCounter) throw Error('clickCounter');
-    if (!updateEl) throw Error('updateEl');
-    return {
+    if (!options.updateEl) throw Error('updateEl');
+
+    const view = {
         updateView() {
-            updateEl.innerHTML = clickCounter.getValue();
+            options.updateEl.innerHTML = clickCounter.getValue();
+        },
+        increaseAndUpdateView() {
+            clickCounter.increase();
+            this.updateView();
         }
-    }
+    };
+
+    options.triggerEl.addEventListener('click', () => {
+        view.increaseAndUpdateView();
+    });
+    return view;
 }
