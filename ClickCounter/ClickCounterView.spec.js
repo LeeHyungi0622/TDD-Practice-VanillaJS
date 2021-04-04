@@ -6,6 +6,21 @@ describe('App.ClickCounterView module의', () => {
         updateEl = document.createElement('span');
         view = App.ClickCounterView(clickCounter, updateEl);
     });
+
+    //의존성 주입(Dependency Injection) 체크 (테스트 코드)
+    it('clickCounter를 주입하지 않으면 에러를 던진다.', () => {
+        const clickCounter = null;
+        const updateEl = document.createElement('span');
+        const actual = () => App.ClickCounterView(clickCounter, updateEl);
+        expect(actual).toThrowError();
+    });
+
+    it('updateEl를 주입하지 않으면 에러를 던진다.', () => {
+        const updateEl = null;
+        const actual = () => App.ClickCounterView(clickCounter, updateEl);
+        expect(actual).toThrowError();
+    });
+
     describe('updateView()는', () => {
         it('ClickCounter의 getValue() 값을 출력한다.', () => {
             // 출력할 값 "준비"
